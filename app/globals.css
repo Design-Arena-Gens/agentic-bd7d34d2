@@ -1,0 +1,257 @@
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  background: #06080f;
+  color: #ecf2ff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1b1e33, #05070c);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 24px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 16px;
+}
+
+.app-header h1 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  color: rgba(236, 242, 255, 0.72);
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.card {
+  background: rgba(12, 16, 27, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(24px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.status-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.status-overview div {
+  background: rgba(8, 12, 22, 0.92);
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid rgba(94, 132, 255, 0.18);
+}
+
+.status-overview strong {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(236, 242, 255, 0.62);
+}
+
+.status-overview p {
+  margin: 6px 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.input-grid {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .input-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: rgba(236, 242, 255, 0.78);
+}
+
+input,
+select,
+textarea {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(9, 12, 21, 0.85);
+  color: inherit;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(94, 132, 255, 0.6);
+  outline-offset: 2px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.positions,
+.signals {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.positions h3,
+.signals h3 {
+  margin: 0;
+  color: rgba(236, 242, 255, 0.82);
+}
+
+button {
+  border-radius: 12px;
+  border: none;
+  padding: 12px 18px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.primary {
+  background: linear-gradient(135deg, #5e84ff, #836bff);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(94, 132, 255, 0.18);
+}
+
+.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(94, 132, 255, 0.28);
+}
+
+.secondary {
+  background: rgba(236, 242, 255, 0.08);
+  color: inherit;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  background: rgba(94, 132, 255, 0.12);
+  color: rgba(131, 155, 255, 0.96);
+}
+
+.status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.status-item {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.status-item span {
+  font-size: 0.85rem;
+  color: rgba(236, 242, 255, 0.68);
+}
+
+.log-stream {
+  background: rgba(5, 8, 16, 0.75);
+  border-radius: 12px;
+  padding: 12px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  max-height: 240px;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.log-entry {
+  color: rgba(173, 184, 230, 0.92);
+}
+
+.log-entry.error {
+  color: #ff6f6f;
+}
+
+.log-entry.success {
+  color: #67f7c8;
+}
+
+.log-entry.warn {
+  color: #f7d867;
+}
